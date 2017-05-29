@@ -18,7 +18,7 @@ int main()
         cout << "Glavni izbornik" << endl;
         cout << "1. Unos nove osobe" << endl;
         cout << "2. Ispisi sve podatke" << endl;
-        cout << "3. Pretraga prema telefosnkom broju" << endl;
+        cout << "3. Pretraga prema telefonskom broju" << endl;
         cout << "4. Pretraga prema prezimenu i imenu" << endl;
         cout << "5. Izmjena podataka prema telefonskom broju" << endl;
         cout << "6. Ispisi sortirano prema prezimenu i imenu" << endl;
@@ -48,6 +48,21 @@ int main()
         }
         else if( izbor == 3 )
         {
+            unsigned long long int brtelefona;
+            cout << "Unesite broj telefona kojeg zelite pronaci: ";
+            cin >> brtelefona;
+            bool postoji=false;
+            for(int i=0; i < brojOsoba; i++)
+            {
+                if(brtelefona==brTelefona[i])
+                {
+                    cout << "postoji u imeniku" << endl;
+                    postoji=true;
+                    break;
+                }
+            }
+            if(postoji==false)
+            cout << "korisnik ne postoji" << endl;
         }
         else if( izbor == 4 )
         {
